@@ -1,0 +1,171 @@
+{
+  "sample": "drill",
+  "model": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-07T17:44:01.801Z",
+  "note": "Real model output, cached. Photo is AI generated.",
+  "usage": {
+    "inputTokens": 3368,
+    "outputTokens": 1495,
+    "costUsd": 0.03253
+  },
+  "attempts": 1,
+  "ms": 23255,
+  "result": {
+    "object": "Cordless drill",
+    "summary": "Mostly made of injection moulded ABS plastic housing with a DC motor and lithium ion battery.",
+    "parts": [
+      {
+        "name": "Keyless chuck",
+        "material": "Steel with plastic sleeve",
+        "process": "machining",
+        "process_detail": "Steel jaws are precision machined and assembled into a threaded body with a plastic grip.",
+        "fun_fact": "Keyless chucks use a ratcheting mechanism that allows one handed tightening up to 50 Nm.",
+        "confidence": 0.85,
+        "internal": false,
+        "box": {
+          "x": 0.28,
+          "y": 0.08,
+          "w": 0.15,
+          "h": 0.18
+        }
+      },
+      {
+        "name": "Motor housing",
+        "material": "ABS plastic",
+        "process": "injection moulding",
+        "process_detail": "Yellow ABS is injected into a two part mould with integrated vents for cooling.",
+        "fun_fact": "The ventilation slots are positioned to draw air over the motor for cooling during heavy use.",
+        "confidence": 0.9,
+        "internal": false,
+        "box": {
+          "x": 0.52,
+          "y": 0.08,
+          "w": 0.28,
+          "h": 0.22
+        }
+      },
+      {
+        "name": "DC brushless motor",
+        "material": "Copper windings and neodymium magnets",
+        "process": "winding",
+        "process_detail": "Copper wire is wound around stator poles and magnets are fixed inside the housing.",
+        "fun_fact": "Brushless motors last 10 times longer than brushed motors and deliver 30 percent more runtime.",
+        "confidence": 0.8,
+        "internal": true,
+        "box": {
+          "x": 0.55,
+          "y": 0.12,
+          "w": 0.18,
+          "h": 0.12
+        }
+      },
+      {
+        "name": "Trigger switch",
+        "material": "ABS plastic",
+        "process": "injection moulding",
+        "process_detail": "Trigger is moulded with a variable resistor contact that controls motor speed electronically.",
+        "fun_fact": "Variable speed triggers use pulse width modulation to control motor speed up to 20000 times per second.",
+        "confidence": 0.85,
+        "internal": false,
+        "box": {
+          "x": 0.48,
+          "y": 0.24,
+          "w": 0.08,
+          "h": 0.08
+        }
+      },
+      {
+        "name": "Handle grip",
+        "material": "TPE overmoulded on ABS",
+        "process": "overmoulding",
+        "process_detail": "Hard ABS handle is moulded first then soft TPE rubber is overmoulded for grip.",
+        "fun_fact": "Overmoulding bonds rubber to plastic chemically during injection creating a permanent grip surface.",
+        "confidence": 0.9,
+        "internal": false,
+        "box": {
+          "x": 0.48,
+          "y": 0.28,
+          "w": 0.18,
+          "h": 0.28
+        }
+      },
+      {
+        "name": "Battery pack",
+        "material": "Lithium ion cells in ABS",
+        "process": "assembly",
+        "process_detail": "Individual 18650 lithium cells are welded together and enclosed in injection moulded ABS housing.",
+        "fun_fact": "Modern drill batteries use the same 18650 cells found in Tesla vehicles and laptops.",
+        "confidence": 0.85,
+        "internal": false,
+        "box": {
+          "x": 0.38,
+          "y": 0.62,
+          "w": 0.32,
+          "h": 0.28
+        }
+      },
+      {
+        "name": "Gearbox assembly",
+        "material": "Steel and nylon gears",
+        "process": "machining",
+        "process_detail": "Planetary gears are machined from steel or moulded nylon and assembled into a metal housing.",
+        "fun_fact": "Planetary gearboxes can achieve 50 to 1 reduction ratios in a compact space using three stages.",
+        "confidence": 0.75,
+        "internal": true,
+        "box": {
+          "x": 0.38,
+          "y": 0.12,
+          "w": 0.15,
+          "h": 0.15
+        }
+      },
+      {
+        "name": "Forward reverse switch",
+        "material": "ABS plastic",
+        "process": "injection moulding",
+        "process_detail": "Sliding switch reverses motor polarity by mechanically switching electrical contacts inside the housing.",
+        "fun_fact": "Reversing switches change the direction of current flow through the motor to reverse rotation instantly.",
+        "confidence": 0.8,
+        "internal": false,
+        "box": {
+          "x": 0.52,
+          "y": 0.18,
+          "w": 0.06,
+          "h": 0.06
+        }
+      }
+    ],
+    "journey": [
+      {
+        "stage": "raw material",
+        "title": "Plastic pellets sourced",
+        "detail": "ABS and TPE pellets are produced from petroleum derivatives at chemical plants."
+      },
+      {
+        "stage": "parts",
+        "title": "Components manufactured",
+        "detail": "Housing parts are injection moulded, motor wound, gears machined, and battery cells produced."
+      },
+      {
+        "stage": "assembly",
+        "title": "Drill assembled",
+        "detail": "Motor, gearbox, switch, and electronics are assembled into the housing with automated screwdrivers."
+      },
+      {
+        "stage": "testing",
+        "title": "Performance tested",
+        "detail": "Each drill is tested for torque, speed, and electrical safety before packaging."
+      },
+      {
+        "stage": "shipping",
+        "title": "Shipped to retailers",
+        "detail": "Drills are packed in cardboard boxes and shipped by container to distribution centers."
+      },
+      {
+        "stage": "desk",
+        "title": "Arrives at buyer",
+        "detail": "Customer purchases from hardware store or online and receives the drill ready to use."
+      }
+    ]
+  }
+}
