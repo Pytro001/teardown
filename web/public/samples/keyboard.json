@@ -1,0 +1,186 @@
+{
+  "sample": "keyboard",
+  "model": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-07T17:44:26.335Z",
+  "note": "Real model output, cached. Photo is AI generated.",
+  "usage": {
+    "inputTokens": 3368,
+    "outputTokens": 1622,
+    "costUsd": 0.03443
+  },
+  "attempts": 1,
+  "ms": 24515,
+  "result": {
+    "object": "Mechanical keyboard",
+    "summary": "This keyboard is mostly made of ABS plastic keycaps, an aluminum case, and mechanical switches.",
+    "parts": [
+      {
+        "name": "Keycaps",
+        "material": "ABS plastic",
+        "process": "injection moulding",
+        "process_detail": "Molten ABS is injected into molds to form keycaps with legends added via doubleshot or printing.",
+        "fun_fact": "Doubleshot keycaps use two colors of plastic molded together so legends never wear off.",
+        "confidence": 0.85,
+        "internal": false,
+        "box": {
+          "x": 0.15,
+          "y": 0.2,
+          "w": 0.75,
+          "h": 0.5
+        }
+      },
+      {
+        "name": "Mechanical switch",
+        "material": "Polycarbonate housing",
+        "process": "injection moulding",
+        "process_detail": "Housing, stem, and spring are molded and stamped separately then assembled with metal contacts.",
+        "fun_fact": "Cherry MX switches are rated for 50 million keystrokes, about 17 years of typical use.",
+        "confidence": 0.9,
+        "internal": false,
+        "box": {
+          "x": 0.52,
+          "y": 0.52,
+          "w": 0.04,
+          "h": 0.04
+        }
+      },
+      {
+        "name": "Top case",
+        "material": "6061 aluminum",
+        "process": "cnc milling",
+        "process_detail": "Aluminum block is CNC milled to create the frame with mounting holes and anodized.",
+        "fun_fact": "CNC milled aluminum cases can take over an hour to machine from a solid block.",
+        "confidence": 0.75,
+        "internal": false,
+        "box": {
+          "x": 0.12,
+          "y": 0.15,
+          "w": 0.82,
+          "h": 0.65
+        }
+      },
+      {
+        "name": "PCB",
+        "material": "FR4 fiberglass",
+        "process": "pcb assembly",
+        "process_detail": "Copper traces are etched onto fiberglass board then components are soldered by machine.",
+        "fun_fact": "Keyboard PCBs use diodes at each switch to prevent ghosting when multiple keys are pressed.",
+        "confidence": 0.9,
+        "internal": true,
+        "box": {
+          "x": 0.15,
+          "y": 0.4,
+          "w": 0.75,
+          "h": 0.3
+        }
+      },
+      {
+        "name": "Stabilizer bar",
+        "material": "Steel wire",
+        "process": "wire drawing",
+        "process_detail": "Steel wire is drawn to precise diameter then bent to shape for stabilizing long keys.",
+        "fun_fact": "Stabilizers prevent long keys like the spacebar from wobbling by balancing both ends equally.",
+        "confidence": 0.8,
+        "internal": false,
+        "box": {
+          "x": 0.35,
+          "y": 0.62,
+          "w": 0.25,
+          "h": 0.03
+        }
+      },
+      {
+        "name": "Spacebar keycap",
+        "material": "PBT plastic",
+        "process": "injection moulding",
+        "process_detail": "PBT is injection molded into long keycap shape with reinforcement ribs underneath for strength.",
+        "fun_fact": "PBT plastic resists shine from finger oils better than ABS and has a textured feel.",
+        "confidence": 0.75,
+        "internal": false,
+        "box": {
+          "x": 0.32,
+          "y": 0.6,
+          "w": 0.3,
+          "h": 0.08
+        }
+      },
+      {
+        "name": "Rotary encoder knob",
+        "material": "Anodized aluminum",
+        "process": "cnc milling",
+        "process_detail": "Aluminum is turned on a lathe then knurled for grip and anodized for finish.",
+        "fun_fact": "Rotary encoders can detect infinite rotation unlike potentiometers which have physical stops.",
+        "confidence": 0.85,
+        "internal": false,
+        "box": {
+          "x": 0.92,
+          "y": 0.25,
+          "w": 0.05,
+          "h": 0.08
+        }
+      },
+      {
+        "name": "Bottom case",
+        "material": "6061 aluminum",
+        "process": "cnc milling",
+        "process_detail": "Milled from aluminum block to match top case with screw holes and rubber feet recesses.",
+        "fun_fact": "Aluminum cases act as heat sinks and add weight for stability during aggressive typing.",
+        "confidence": 0.75,
+        "internal": false,
+        "box": {
+          "x": 0.12,
+          "y": 0.7,
+          "w": 0.82,
+          "h": 0.15
+        }
+      },
+      {
+        "name": "USB controller chip",
+        "material": "Silicon die",
+        "process": "pcb assembly",
+        "process_detail": "Microcontroller chip is surface mounted to PCB and handles key scanning and USB communication.",
+        "fun_fact": "Most mechanical keyboards use ATmega32U4 chips running QMK firmware for full programmability.",
+        "confidence": 0.85,
+        "internal": true,
+        "box": {
+          "x": 0.45,
+          "y": 0.5,
+          "w": 0.08,
+          "h": 0.15
+        }
+      }
+    ],
+    "journey": [
+      {
+        "stage": "raw material",
+        "title": "Material sourcing",
+        "detail": "Aluminum ingots, plastic pellets, copper sheets, and silicon wafers are procured from suppliers."
+      },
+      {
+        "stage": "parts",
+        "title": "Component manufacturing",
+        "detail": "Cases are CNC milled, keycaps injection molded, switches assembled, and PCBs fabricated separately."
+      },
+      {
+        "stage": "assembly",
+        "title": "PCB population",
+        "detail": "Switches are soldered to PCB along with controller chip and other electronic components."
+      },
+      {
+        "stage": "assembly",
+        "title": "Final assembly",
+        "detail": "PCB with switches is mounted in case, stabilizers installed, and keycaps pressed onto switches."
+      },
+      {
+        "stage": "testing",
+        "title": "Quality control",
+        "detail": "Each key is tested for proper actuation and USB connectivity is verified."
+      },
+      {
+        "stage": "shipping",
+        "title": "Packaging and delivery",
+        "detail": "Keyboard is boxed with accessories and shipped to retailers or directly to customers."
+      }
+    ]
+  }
+}

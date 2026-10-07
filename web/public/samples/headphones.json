@@ -1,0 +1,171 @@
+{
+  "sample": "headphones",
+  "model": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-07T17:37:42.272Z",
+  "note": "Real model output, cached. Photo is AI generated.",
+  "usage": {
+    "inputTokens": 3368,
+    "outputTokens": 1485,
+    "costUsd": 0.03238
+  },
+  "attempts": 1,
+  "ms": 22520,
+  "result": {
+    "object": "Over-ear headphones",
+    "summary": "Mostly made of ABS plastic housings, foam cushions, and internal speaker drivers with electronic components.",
+    "parts": [
+      {
+        "name": "Ear cushion",
+        "material": "Memory foam with PU leather",
+        "process": "foam moulding",
+        "process_detail": "Polyurethane foam is moulded then wrapped with synthetic leather cover and sewn.",
+        "fun_fact": "Memory foam was originally developed by NASA in 1966 for aircraft cushions.",
+        "confidence": 0.85,
+        "internal": false,
+        "box": {
+          "x": 0.32,
+          "y": 0.42,
+          "w": 0.15,
+          "h": 0.28
+        }
+      },
+      {
+        "name": "Ear cup housing",
+        "material": "ABS plastic",
+        "process": "injection moulding",
+        "process_detail": "Molten ABS is injected into a mold cavity and cooled to form the shell.",
+        "fun_fact": "ABS plastic is the same material used in LEGO bricks for its durability.",
+        "confidence": 0.9,
+        "internal": false,
+        "box": {
+          "x": 0.58,
+          "y": 0.45,
+          "w": 0.25,
+          "h": 0.32
+        }
+      },
+      {
+        "name": "Headband",
+        "material": "ABS plastic with foam padding",
+        "process": "injection moulding",
+        "process_detail": "Plastic frame is injection moulded then padded with foam and covered with fabric.",
+        "fun_fact": "Headbands often contain spring steel inside for tension that lasts thousands of flexes.",
+        "confidence": 0.85,
+        "internal": false,
+        "box": {
+          "x": 0.35,
+          "y": 0.08,
+          "w": 0.38,
+          "h": 0.25
+        }
+      },
+      {
+        "name": "Hinge mechanism",
+        "material": "Polycarbonate plastic",
+        "process": "injection moulding",
+        "process_detail": "Hinge parts are injection moulded with precise tolerances for smooth rotation and adjustment.",
+        "fun_fact": "Quality headphone hinges are tested to withstand over 10,000 folding cycles.",
+        "confidence": 0.8,
+        "internal": false,
+        "box": {
+          "x": 0.68,
+          "y": 0.38,
+          "w": 0.08,
+          "h": 0.12
+        }
+      },
+      {
+        "name": "Speaker driver",
+        "material": "Neodymium magnet (NdFeB)",
+        "process": "assembly",
+        "process_detail": "Voice coil, diaphragm, and magnet are assembled with precise alignment for sound quality.",
+        "fun_fact": "Neodymium magnets are the strongest permanent magnets commercially available, enabling compact powerful drivers.",
+        "confidence": 0.9,
+        "internal": true,
+        "box": {
+          "x": 0.65,
+          "y": 0.55,
+          "w": 0.12,
+          "h": 0.12
+        }
+      },
+      {
+        "name": "PCB circuit board",
+        "material": "FR4 fiberglass PCB",
+        "process": "pcb assembly",
+        "process_detail": "Components are soldered onto printed circuit board using automated pick and place machines.",
+        "fun_fact": "Modern Bluetooth headphone PCBs can contain over 100 components in a space smaller than a coin.",
+        "confidence": 0.85,
+        "internal": true,
+        "box": {
+          "x": 0.7,
+          "y": 0.5,
+          "w": 0.08,
+          "h": 0.08
+        }
+      },
+      {
+        "name": "Control button",
+        "material": "Silicone rubber",
+        "process": "compression moulding",
+        "process_detail": "Silicone is heated and pressed into a mold to form the button pad.",
+        "fun_fact": "Silicone buttons are rated for millions of presses without losing their tactile feel.",
+        "confidence": 0.75,
+        "internal": false,
+        "box": {
+          "x": 0.78,
+          "y": 0.58,
+          "w": 0.06,
+          "h": 0.08
+        }
+      },
+      {
+        "name": "Lithium battery",
+        "material": "Lithium polymer cell",
+        "process": "assembly",
+        "process_detail": "Lithium polymer layers are stacked, sealed in foil pouch, and fitted with protection circuit.",
+        "fun_fact": "Lithium polymer batteries can be shaped to fit tight spaces unlike rigid cylindrical cells.",
+        "confidence": 0.8,
+        "internal": true,
+        "box": {
+          "x": 0.38,
+          "y": 0.52,
+          "w": 0.08,
+          "h": 0.15
+        }
+      }
+    ],
+    "journey": [
+      {
+        "stage": "raw material",
+        "title": "Plastic pellets sourced",
+        "detail": "ABS and polycarbonate pellets are produced from petroleum derivatives at chemical plants."
+      },
+      {
+        "stage": "parts",
+        "title": "Components manufactured",
+        "detail": "Housings are injection moulded, drivers assembled, PCBs populated, and batteries packaged at suppliers."
+      },
+      {
+        "stage": "assembly",
+        "title": "Headphones assembled",
+        "detail": "All parts are brought together on assembly line with wiring, soldering, and fitting."
+      },
+      {
+        "stage": "testing",
+        "title": "Quality testing",
+        "detail": "Each unit is tested for sound quality, Bluetooth connectivity, and battery performance."
+      },
+      {
+        "stage": "shipping",
+        "title": "Packaged and shipped",
+        "detail": "Headphones are boxed with accessories and shipped in bulk to distribution centers worldwide."
+      },
+      {
+        "stage": "desk",
+        "title": "Delivered to buyer",
+        "detail": "Final delivery from warehouse or retail store to the customer's home or office."
+      }
+    ]
+  }
+}

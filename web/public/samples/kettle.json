@@ -1,0 +1,171 @@
+{
+  "sample": "kettle",
+  "model": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "generatedAt": "2026-10-07T17:43:38.534Z",
+  "note": "Real model output, cached. Photo is AI generated.",
+  "usage": {
+    "inputTokens": 3368,
+    "outputTokens": 1450,
+    "costUsd": 0.03185
+  },
+  "attempts": 1,
+  "ms": 24255,
+  "result": {
+    "object": "Electric kettle",
+    "summary": "Mostly made of stainless steel body with plastic handle and internal heating element.",
+    "parts": [
+      {
+        "name": "Stainless steel body",
+        "material": "304 stainless steel",
+        "process": "deep drawing",
+        "process_detail": "Sheet steel is pressed into cylindrical shape using progressive dies and then welded.",
+        "fun_fact": "Deep drawn kettles require multiple drawing stages to achieve the depth without tearing the metal.",
+        "confidence": 0.85,
+        "internal": false,
+        "box": {
+          "x": 0.25,
+          "y": 0.15,
+          "w": 0.45,
+          "h": 0.75
+        }
+      },
+      {
+        "name": "Plastic handle",
+        "material": "Polypropylene",
+        "process": "injection moulding",
+        "process_detail": "Molten plastic injected into mould cavity to form ergonomic handle shape with grip.",
+        "fun_fact": "Kettle handles use heat resistant plastics that can withstand over 120 degrees Celsius continuously.",
+        "confidence": 0.8,
+        "internal": false,
+        "box": {
+          "x": 0.65,
+          "y": 0.2,
+          "w": 0.15,
+          "h": 0.5
+        }
+      },
+      {
+        "name": "Lid assembly",
+        "material": "Stainless steel",
+        "process": "stamping",
+        "process_detail": "Flat steel sheet stamped into domed lid shape with button mechanism assembled.",
+        "fun_fact": "Kettle lids often have steam vents positioned to direct hot steam away from the handle.",
+        "confidence": 0.8,
+        "internal": false,
+        "box": {
+          "x": 0.35,
+          "y": 0.05,
+          "w": 0.3,
+          "h": 0.15
+        }
+      },
+      {
+        "name": "Water level window",
+        "material": "Polycarbonate",
+        "process": "injection moulding",
+        "process_detail": "Clear plastic moulded and sealed into body opening with gasket for water tightness.",
+        "fun_fact": "Polycarbonate windows can withstand boiling water contact and are more impact resistant than glass.",
+        "confidence": 0.75,
+        "internal": false,
+        "box": {
+          "x": 0.48,
+          "y": 0.35,
+          "w": 0.08,
+          "h": 0.25
+        }
+      },
+      {
+        "name": "Base ring",
+        "material": "Stainless steel",
+        "process": "stamping",
+        "process_detail": "Ring stamped from sheet metal and attached to body to protect base.",
+        "fun_fact": "The base ring provides stability and protects countertops from heat transfer during operation.",
+        "confidence": 0.75,
+        "internal": false,
+        "box": {
+          "x": 0.25,
+          "y": 0.82,
+          "w": 0.45,
+          "h": 0.12
+        }
+      },
+      {
+        "name": "Heating element",
+        "material": "Stainless steel sheathed coil",
+        "process": "assembly",
+        "process_detail": "Nichrome wire encased in steel tube with magnesium oxide insulation, sealed and mounted.",
+        "fun_fact": "Concealed heating elements heat water faster than exposed coils and prevent mineral buildup on the element.",
+        "confidence": 0.9,
+        "internal": true,
+        "box": {
+          "x": 0.3,
+          "y": 0.75,
+          "w": 0.35,
+          "h": 0.08
+        }
+      },
+      {
+        "name": "Spout",
+        "material": "304 stainless steel",
+        "process": "deep drawing",
+        "process_detail": "Formed from sheet steel and welded to body with precise angle for drip free pouring.",
+        "fun_fact": "Spout geometry is carefully designed to create laminar flow and prevent dribbling when pouring.",
+        "confidence": 0.8,
+        "internal": false,
+        "box": {
+          "x": 0.2,
+          "y": 0.25,
+          "w": 0.15,
+          "h": 0.2
+        }
+      },
+      {
+        "name": "Control PCB",
+        "material": "FR4 circuit board",
+        "process": "pcb assembly",
+        "process_detail": "Components soldered onto board to control heating element and auto shutoff function.",
+        "fun_fact": "Modern kettle PCBs include thermistors that detect steam temperature to trigger automatic shutoff at boiling.",
+        "confidence": 0.85,
+        "internal": true,
+        "box": {
+          "x": 0.68,
+          "y": 0.55,
+          "w": 0.08,
+          "h": 0.15
+        }
+      }
+    ],
+    "journey": [
+      {
+        "stage": "raw material",
+        "title": "Steel coil production",
+        "detail": "Iron ore smelted and rolled into thin stainless steel coils at steel mill."
+      },
+      {
+        "stage": "parts",
+        "title": "Body forming",
+        "detail": "Steel sheets deep drawn into kettle body and spout, then welded together."
+      },
+      {
+        "stage": "parts",
+        "title": "Component manufacturing",
+        "detail": "Handle and lid moulded from plastic, heating element assembled with nichrome wire."
+      },
+      {
+        "stage": "assembly",
+        "title": "Final assembly",
+        "detail": "Heating element, PCB, handle, and lid assembled onto body and tested."
+      },
+      {
+        "stage": "testing",
+        "title": "Quality testing",
+        "detail": "Each kettle tested for leaks, heating performance, and safety shutoff function."
+      },
+      {
+        "stage": "shipping",
+        "title": "Packaging and distribution",
+        "detail": "Kettles boxed with manuals and shipped to retailers via container freight."
+      }
+    ]
+  }
+}
