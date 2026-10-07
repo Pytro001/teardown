@@ -20,3 +20,6 @@ output/frames/
 # OS and editor noise
 .DS_Store
 *.log
+output/check/
+output/*.txt
+output/contact.jpg
