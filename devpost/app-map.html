@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teardown app map</title>
+<style>
+  :root { --bg:#0b0c0e; --panel:#14161a; --line:#ffffff1f; --text:#f2f2ee; --muted:#9a9ea6; --accent:#ffb547; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 system-ui, -apple-system, sans-serif; }
+  main { max-width: 900px; margin: 0 auto; padding: 40px 16px 80px; }
+  h1 { font-size: 34px; margin: 0 0 6px; letter-spacing: -0.02em; }
+  h2 { font-size: 22px; margin: 40px 0 10px; }
+  p, li { color: #d6d7d2; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 14px; color: var(--accent); }
+  .muted { color: var(--muted); }
+  .box { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px; margin: 12px 0; }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px 18px; margin: 10px 0; }
+  summary { cursor: pointer; font-weight: 600; }
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  svg text { font-family: system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Teardown app map</h1>
+  <p class="muted">A snapshot of how the finished app works, made from the code at the end of the build. It can drift as the code changes.</p>
+
+  <h2>What it is</h2>
+  <p>A one page web app. You give it a photo of an object; a small Node server sends the photo to Claude Sonnet 4.5 on Amazon Bedrock, which answers in a fixed JSON shape; the page draws that answer on top of your photo: numbered callouts, a part list with cards, and a "how it is made" timeline. Five examples ship with saved answers so they load instantly.</p>
+
+  <h2>One action, end to end</h2>
+  <svg viewBox="0 0 860 210" width="100%" role="img" aria-label="Diagram: photo goes from the page to the server to Bedrock and back as callouts">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#ffb547"/></marker></defs>
+    <g fill="#14161a" stroke="#ffffff33">
+      <rect x="10" y="40" width="190" height="90" rx="14"/><rect x="250" y="40" width="190" height="90" rx="14"/><rect x="490" y="40" width="160" height="90" rx="14"/><rect x="700" y="40" width="150" height="90" rx="14"/>
+    </g>
+    <g fill="#f2f2ee" font-size="15" text-anchor="middle">
+      <text x="105" y="75">Drop a photo</text><text x="105" y="98" fill="#9a9ea6" font-size="12">DropZone.tsx, image.ts</text>
+      <text x="345" y="75">POST /api/teardown</text><text x="345" y="98" fill="#9a9ea6" font-size="12">server/index.mjs</text>
+      <text x="570" y="75">Bedrock Claude</text><text x="570" y="98" fill="#9a9ea6" font-size="12">bedrock.mjs, schema.mjs</text>
+      <text x="775" y="75">Callouts</text><text x="775" y="98" fill="#9a9ea6" font-size="12">Overlay.tsx</text>
+    </g>
+    <g stroke="#ffb547" stroke-width="2" marker-end="url(#a)"><path d="M200 85H245"/><path d="M440 85H485"/><path d="M650 85H695"/></g>
+    <text x="430" y="180" fill="#9a9ea6" font-size="13" text-anchor="middle">Examples skip the server: web/public/samples/&lt;id&gt;.json holds a saved real answer.</text>
+  </svg>
+
+  <h2>Reference route (three stops)</h2>
+  <p class="muted">Not toured with the builder yet; this is the route to follow.</p>
+  <details open><summary>1. The photo comes in: <code>web/src/components/DropZone.tsx</code>, <code>web/src/App.tsx</code> (onFile)</summary>
+    <p>The drop zone hands the file to <code>onFile</code> in App. <code>prepareFile</code> in <code>web/src/lib/image.ts</code> scales it to 1280 px and turns it into base64, and <code>requestTeardown</code> in <code>web/src/lib/api.ts</code> posts it.</p></details>
+  <details><summary>2. The model answers in a fixed shape: <code>server/bedrock.mjs</code> (analyzeImage), <code>server/schema.mjs</code> (validateTeardown)</summary>
+    <p>The Converse request forces the <code>report_teardown</code> tool, so the answer is JSON that matches <code>teardownSchema</code>. <code>validateTeardown</code> checks part counts, boxes, confidence and the process list; if it fails, the server asks once more with the errors.</p></details>
+  <details><summary>3. The answer is drawn: <code>web/src/components/Overlay.tsx</code> (layout)</summary>
+    <p><code>layout</code> puts each dot at the centre of its box, picks a side for the label, spaces labels so they never overlap, and swaps slots when leader lines would cross. Timing comes from <code>web/src/film.ts</code> (<code>calloutAt</code>).</p></details>
+
+  <h2>To change this, start here</h2>
+  <div class="box"><ul>
+    <li>What the model is asked: <code>SYSTEM</code> in <code>server/bedrock.mjs</code> and field descriptions in <code>server/schema.mjs</code>.</li>
+    <li>Confidence words and thresholds: <code>web/src/lib/confidence.ts</code>.</li>
+    <li>Colours and type: the <code>:root</code> tokens at the top of <code>web/src/styles.css</code>.</li>
+    <li>Animation speed: <code>T</code> in <code>web/src/film.ts</code>.</li>
+    <li>The examples: <code>scripts/samples.mjs</code>, then <code>npm run samples:images</code> and <code>npm run samples:cache</code>.</li>
+  </ul></div>
+
+  <h2>A practice to reuse</h2>
+  <div class="box"><p>The spec named one uncertainty before any code: are a language model's bounding boxes good enough to put dots on? The build answered it with evidence (the five sample overlays, recorded in <code>devpost/checklist.md</code> under Revisions) and the product absorbed the answer as a visible feature: confidence words per part and an "approximate" note. Writing the risky assumption down first, then checking it on real outputs early, works on any project that leans on a model.</p></div>
+
+  <h2>Run it again</h2>
+  <div class="box"><p><code>npm install</code>, put your Bedrock token in <code>.env</code>, then <code>npm run dev</code> and open <code>http://localhost:5303</code>. Tests: <code>npm test</code>.</p></div>
+</main>
+</body>
+</html>

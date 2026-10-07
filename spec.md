@@ -20,10 +20,10 @@ PRD ref: `prd.md > The Core Journey`.
 6. Clicking an example loads `/samples/<id>.jpg` and `/samples/<id>.json` with no server call.
 
 ## Stack
-- React 19 + TypeScript + Vite 7 (https://react.dev, https://vite.dev). Learner choice: familiar, fast.
+- React 19 + TypeScript 7 + Vite 8 (https://react.dev, https://vite.dev). Learner choice: familiar, fast.
 - Node 26 built-in `http` and `fetch` for the server, no framework (https://nodejs.org/api/http.html). Fewer dependencies.
 - Amazon Bedrock Converse API, model `us.anthropic.claude-sonnet-4-5-20250929-v1:0`, bearer token auth (https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html).
-- Together AI FLUX.1 schnell for the five sample photos only (https://docs.together.ai/docs/images-overview).
+- Together AI FLUX.1 schnell for the five sample photos only (https://docs.together.ai/docs/images-overview), with Azure AI Foundry gpt-image-2 as the fallback that was actually used (see `checklist.md > Revisions`).
 - Playwright (already on the machine) for the film recorder; ffmpeg for encoding.
 
 ## Where It Runs and How Someone Tries It
