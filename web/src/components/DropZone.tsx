@@ -1,14 +1,14 @@
 import { useRef, useState } from 'react';
 
-type Props = { onFile: (f: File) => void; error: string | null };
+type Props = { onFile: (f: File) => void; error: string | null; forceOver?: boolean };
 
 /** The first screen: one big target for a photo. Click, Enter, drag and drop, or the phone camera. */
-export function DropZone({ onFile, error }: Props) {
+export function DropZone({ onFile, error, forceOver }: Props) {
   const input = useRef<HTMLInputElement>(null);
   const [over, setOver] = useState(false);
   return (
     <div
-      className={`dropzone ${over ? 'over' : ''}`}
+      className={`dropzone ${over || forceOver ? 'over' : ''}`}
       role="button"
       tabIndex={0}
       aria-label="Choose a photo of an object"

@@ -1,5 +1,6 @@
+import { useEffect, useRef, useState } from 'react';
 import type { JourneyStep } from '../lib/types';
-import { easeOut, prog, T } from '../film';
+import { clock, easeOut, prog, T, useNow } from '../film';
 
 const ICONS: Record<string, string> = {
   'raw material': 'M10 40l10-18 8 10 6-8 12 16z M22 14a4 4 0 1 0 0.1 0',
@@ -11,13 +12,26 @@ const ICONS: Record<string, string> = {
   desk: 'M8 40h40 M14 40v8 M42 40v8 M30 40V22l8-8 M38 14l5 5'
 };
 
-type Props = { steps: JourneyStep[]; now: number; startAt: number };
+type Props = { steps: JourneyStep[]; startAt: number };
 
 /** "How it is made": raw material to desk, one step after another. */
-export function Journey({ steps, now, startAt }: Props) {
+export function Journey({ steps, startAt: readyAt }: Props) {
+  // The timeline plays once it is scrolled into view (and not before the callouts finish).
+  const ref = useRef<HTMLElement>(null);
+  const [seenAt, setSeenAt] = useState<number | null>(null);
+  useEffect(() => {
+    setSeenAt(null);
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { setSeenAt(clock.now()); io.disconnect(); } }, { threshold: 0.3 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [steps]);
+  const startAt = seenAt === null ? Infinity : Math.max(readyAt, seenAt);
+  const now = useNow(Number.isFinite(startAt) ? startAt + 3000 : 0);
   const lineP = easeOut(prog(now, startAt, 300 + steps.length * T.journeyGap + 400));
   return (
-    <section className="journey" aria-label="How it is made">
+    <section className="journey" aria-label="How it is made" ref={ref}>
       <h2 className="journey-title" style={{ opacity: easeOut(prog(now, startAt, 400)) }}>How it is made</h2>
       <div className="journey-track" style={{ ['--n' as string]: steps.length }}>
         <div className="journey-line"><span style={{ width: `${lineP * 100}%` }} /></div>

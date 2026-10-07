@@ -77,9 +77,10 @@ function layout(parts: Part[], w: number, h: number, pillW: number, pitch: numbe
 
 export function Overlay({ parts, w, h, now, revealAt, selected, selectedAt, onSelect }: Props) {
   const compact = w < 760;
-  const pillW = compact ? 150 : 218;
-  const pitch = compact ? 44 : 62;
-  const margin = compact ? 10 : 22;
+  // On narrow screens labels shrink to number chips; the names are in the part list below.
+  const pillW = compact ? 30 : 218;
+  const pitch = compact ? 34 : 62;
+  const margin = compact ? 8 : 22;
   const items = layout(parts, w, h, pillW, pitch, margin);
   const selP = selected === null ? 0 : easeOut(prog(now, selectedAt, 380));
 
@@ -125,17 +126,17 @@ export function Overlay({ parts, w, h, now, revealAt, selected, selectedAt, onSe
           <button
             key={it.i}
             type="button"
-            className={`label ${it.side === 'L' ? 'left' : 'right'} ${selected === it.i ? 'active' : ''}`}
+            className={`label ${it.side === 'L' ? 'left' : 'right'} ${selected === it.i ? 'active' : ''} ${compact ? 'chip' : ''}`}
             style={{ top: it.ly, width: pillW, [it.side === 'L' ? 'left' : 'right']: margin, opacity: lp * dim, transform: `translate(${shift}px, -50%)` }}
             onClick={() => onSelect(it.i)}
             aria-label={`Part ${it.i + 1}: ${p.name}`}
             tabIndex={-1}
           >
             <span className="label-num">{it.i + 1}</span>
-            <span className="label-text">
+            {!compact && <span className="label-text">
               <span className="label-name">{p.name}</span>
               <span className="label-proc">{p.internal ? 'inside · ' : ''}{p.process}</span>
-            </span>
+            </span>}
           </button>
         );
       })}

@@ -193,3 +193,7 @@ html.film ::-webkit-scrollbar { display: none; }
 .legend .high { background: var(--high); } .legend .mid { background: var(--mid); } .legend .low { background: var(--low); }
 .overlay-svg { pointer-events: none; }
 .overlay-svg.dots .dot-hit { pointer-events: auto; }
+.drag-card { position: fixed; z-index: 55; width: 260px; height: 173px; object-fit: cover; border-radius: 14px; transform: translate(-30%, -30%) rotate(-4deg); box-shadow: 0 30px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.2); pointer-events: none; }
+html.film .journey { padding-bottom: 230px; }
+.label.chip { padding: 2px; justify-content: center; border-radius: 9px; }
+.label.chip .label-num { width: 24px; height: 24px; background: transparent; }

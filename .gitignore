@@ -13,8 +13,6 @@ dist/
 # personal learning context from the Devpost skill pack
 /devpost/learner-profile.md
 
-# film output (large)
-output/*.mp4
 output/frames/
 
 # OS and editor noise

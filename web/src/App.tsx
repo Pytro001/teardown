@@ -31,6 +31,8 @@ export default function App() {
   const [dropError, setDropError] = useState<string | null>(null);
   const [caption, setCaption] = useState<{ text: string; at: number } | null>(null);
   const [cursor, setCursor] = useState<{ x: number; y: number; down: boolean; at: number } | null>(null);
+  const [drag, setDrag] = useState<{ x: number; y: number; id: string } | null>(null);
+  const [filmOver, setFilmOver] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
   const token = useRef(0);
 
@@ -92,6 +94,9 @@ export default function App() {
       cursor: (x: number | null, y = 0, down = false) => setCursor(x === null ? null : { x, y, down, at: clock.now() }),
       scrollTo: (y: number) => window.scrollTo(0, y),
       rect: (sel: string) => { const r = document.querySelector(sel)?.getBoundingClientRect(); return r ? { x: r.x, y: r.y, w: r.width, h: r.height } : null; },
+      drag: (x: number | null, y = 0, id = '') => setDrag(x === null ? null : { x, y, id }),
+      over: (v: boolean) => setFilmOver(v),
+      dotRect: (i: number) => { const r = document.querySelectorAll('.dots .dot-hit')[i]?.getBoundingClientRect(); return r ? { x: r.x, y: r.y, w: r.width, h: r.height } : null; },
       labelRect: (i: number) => { const r = document.querySelectorAll('.label')[i]?.getBoundingClientRect(); return r ? { x: r.x, y: r.y, w: r.width, h: r.height } : null; },
       ready: true
     };
@@ -122,7 +127,7 @@ export default function App() {
         <main className="hero">
           <h1>What is inside this?</h1>
           <p className="lede">Snap any object. See every part, what it is made of, and how it was made.</p>
-          <DropZone onFile={onFile} error={dropError} />
+          <DropZone onFile={onFile} error={dropError} forceOver={filmOver} />
           <Examples active={null} onPick={(id) => pickSample(id)} />
         </main>
       ) : (
@@ -154,11 +159,12 @@ export default function App() {
               </aside>
             )}
           </main>
-          {ready && data && data.journey.length > 0 && <Journey steps={data.journey} now={now} startAt={journeyAt} />}
+          {ready && data && data.journey.length > 0 && <Journey steps={data.journey} startAt={journeyAt} />}
         </>
       )}
 
       {FILM && caption && <div className="caption" style={{ opacity: capP, transform: `translate(-50%, ${(1 - capP) * 10}px)` }}>{caption.text}</div>}
+      {FILM && drag && <img className="drag-card" src={sampleImage(drag.id)} alt="" style={{ left: drag.x, top: drag.y }} />}
       {FILM && cursor && (
         <div className={cursor.down ? 'touch down' : 'touch'} style={{ left: cursor.x, top: cursor.y }}>
           {cursor.down && <span className="ripple" style={{ transform: `translate(-50%,-50%) scale(${0.4 + 1.4 * easeOut(prog(now, cursor.at, 450))})`, opacity: 1 - prog(now, cursor.at, 450) }} />}
