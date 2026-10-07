@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# build output
+web/dist/
+dist/
+
+# local credentials (secret-free .env.example is allowed)
+.env
+.env.*
+!.env.example
+
+# personal learning context from the Devpost skill pack
+/devpost/learner-profile.md
+
+# film output (large)
+output/*.mp4
+output/frames/
+
+# OS and editor noise
+.DS_Store
+*.log
