@@ -14,7 +14,7 @@ Snap any object and see what is inside it: every part called out on your photo, 
 
 ## Links
 
-- Repo: [REPO] (public, contains scope.md, prd.md, spec.md at the root)
+- Repo: https://github.com/Pytro001/teardown (public, contains scope.md, prd.md, spec.md at the root)
 - Video: [VIDEO]
 - Live demo: [DEMO] (optional; the app runs locally, see README)
 
@@ -75,7 +75,7 @@ react, typescript, vite, node.js, amazon-bedrock, claude, claude-sonnet-4.5, cla
 Individual.
 
 **Country of residence**
-[COUNTRY]
+France
 
 **What did you use to build your project?**
 Claude Code with the Devpost Learn Skill Pack (`challengepost/learn-ai-basics`, skills 1-start to 5-build), Amazon Bedrock with Claude Sonnet 4.5 vision (Converse API, image input, forced tool call for JSON), React, TypeScript, Vite and Node.js. The sample photos were planned with Together FLUX.1 schnell, but that key was rejected during the build, so the five photos were generated with Azure AI Foundry gpt-image-2 instead (the script supports both). Playwright and ffmpeg record the demo film.
@@ -87,7 +87,7 @@ A little, and I measured it. Each photo uses about 3,000 to 3,400 input tokens a
 Confident for the core flow, which I tested end to end: a real upload through the page returns a breakdown in about 20 seconds, a blank photo shows the "could not find parts" message, all five examples load, and the validator tests pass. Less confident about part positions on cluttered real world photos: the boxes are approximate, small parts can drift, and hidden parts are inferred. The materials, processes and fun facts are the model's best estimate and are not fact checked. It runs locally; it is not deployed yet.
 
 **License URL**
-[REPO]/blob/main/LICENSE (MIT)
+https://github.com/Pytro001/teardown/blob/main/LICENSE (MIT)
 
 **What value did your project create?**
 It turns a vague curiosity ("what is this made of?") into a two second visual answer on your own object, and it teaches the basics of manufacturing (moulding, stamping, casting, PCB assembly, winding) through things people already own. It is useful for curious people, teachers and students, and makers who want a quick first look at how a product is built before they open it.
